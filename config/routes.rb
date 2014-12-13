@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :heartbeats
 
       match 'status', to: '/api/v1/monitor#status', via: 'GET'
+      post 'notifications/notify' => 'notifications#notify'
     end
   end
 
