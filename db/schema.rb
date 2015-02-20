@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213005105) do
+ActiveRecord::Schema.define(version: 20150220004515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20141213005105) do
   create_table "heartbeats", force: true do |t|
     t.integer  "beats_per_second", default: 0
     t.integer  "beats_per_minute", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "temperature_aggregate_days", force: true do |t|
+    t.decimal  "fahrenheit"
+    t.decimal  "celsius"
+    t.decimal  "kelvin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
