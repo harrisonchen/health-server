@@ -3,7 +3,7 @@ module Api
 		class TemperaturesController < ApplicationController
 
 			def index
-				render json: { temperatures: Temperature.all.order("id DESC") }
+				render json: { temperatures: Temperature.all.order("id DESC").limit(50) }
 			end
 
 			def show
