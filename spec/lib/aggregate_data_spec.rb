@@ -1,7 +1,7 @@
 require "rails_helper"
 require "aggregate_data.rb"
 
-RSpec.describe "AggregateData" do
+RSpec.describe AggregateData do
 
 	before(:each) do
 		@avg_temperature = 0
