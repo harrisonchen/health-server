@@ -1,4 +1,4 @@
-class TemperatureAggregateDay < ActiveRecord::Base
+class TemperatureAggregateWeek < ActiveRecord::Base
 
   before_save :convert_units
 
