@@ -14,11 +14,11 @@ class Temperature < ActiveRecord::Base
     { celsius: this.celsius, kevlin: this.kelvin }
   end
 
-  def self.aggregate_daily_tempuratures
+  def self.aggregate_daily_temperatures
     aggregate_temperatures(10, TemperatureAggregateDay)
   end
 
-  def self.aggregate_weekly_tempuratures
+  def self.aggregate_weekly_temperatures
     aggregate_temperatures(20, TemperatureAggregateWeek)
   end
 
