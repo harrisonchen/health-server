@@ -18,17 +18,17 @@ class Temperature < ActiveRecord::Base
   end
 
   def self.aggregate_daily_temperatures
-    aggregate_temperatures(10, TemperatureAggregateDay)
+    aggregate_temperatures(1.day.ago, TemperatureAggregateDay)
   end
 
   def self.aggregate_weekly_temperatures
-    aggregate_temperatures(20, TemperatureAggregateWeek)
+    aggregate_temperatures(7.day.ago, TemperatureAggregateWeek)
   end
 
   private
 
     def self.aggregate_temperatures(period, model)
-      last_10_temperatures = Temperature.all.order("id desc").limit(period)
+      last_10_temperatures = Temperature.where('created_at > ?', period)
 
       if last_10_temperatures.count == 0
         return
