@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'typhoeus'
 gem 'twilio-ruby'
 gem 'whenever', :require => false
+gem 'clockwork'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
