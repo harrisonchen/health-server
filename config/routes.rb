@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :temperatures
       resources :heartbeats
+      resources :steps
 
       match 'status', to: '/api/v1/monitor#status', via: 'GET'
       match 'daily_temperatures', to: '/api/v1/stats#daily_temperatures', via: 'GET'
