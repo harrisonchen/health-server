@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327212215) do
+ActiveRecord::Schema.define(version: 20150328041159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "healths", force: true do |t|
     t.string   "status",     default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "heartbeat_aggregate_days", force: true do |t|
+    t.integer  "beats_per_second", default: 0
+    t.integer  "beats_per_minute", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "heartbeat_aggregate_weeks", force: true do |t|
+    t.integer  "beats_per_second", default: 0
+    t.integer  "beats_per_minute", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
