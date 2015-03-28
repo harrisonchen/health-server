@@ -11,7 +11,10 @@ class Temperature < ActiveRecord::Base
   end
 
   def self._convert_units(this = self)
-    convert_units(this)
+    this.celsius = (this.fahrenheit - 32) * (5.0/9.0)
+    this.kelvin = this.celsius + 273
+
+    { celsius: this.celsius, kevlin: this.kelvin }
   end
 
   def self.aggregate_daily_temperatures
