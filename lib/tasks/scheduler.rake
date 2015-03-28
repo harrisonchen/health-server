@@ -15,4 +15,12 @@ namespace :scheduler do
   task aggregate_weekly_heartbeats: :environment do
     Heartbeat.aggregate_weekly_heartbeats
   end
+
+  task aggregate_daily_steps: :environment do
+    Step.aggregate_daily_steps
+  end
+
+  task aggregate_weekly_steps: :environment do
+    Step.aggregate_weekly_steps
+  end
 end
