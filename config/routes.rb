@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :heartbeats
       resources :steps
 
+      match 'sync', to: '/api/v1/sync#sync', via: 'GET'
       match 'status', to: '/api/v1/monitor#status', via: 'GET'
       match 'daily_temperatures', to: '/api/v1/stats#daily_temperatures', via: 'GET'
       post 'notifications/notify' => 'notifications#notify'
